@@ -1,37 +1,57 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import { Tabs } from "expo-router";
+import React from "react";
 
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
-
+import { TabBarIcon } from "@/components/navigation/TabBarIcon";
+import { Colors } from "@/constants/Colors";
+import { useColorScheme } from "@/hooks/useColorScheme";
+import AntDesign from '@expo/vector-icons/AntDesign';
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
-  return (
+  return (    
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
         headerShown: false,
-      }}>
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
+          title: "Home",
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
+            <TabBarIcon
+              name={focused ? "home" : "home"}
+              color={color}
+            />
           ),
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="about"
         options={{
-          title: 'Explore',
+          title: "about",
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+            <TabBarIcon
+              name={focused ? "infocirlceo" : "infocirlce"}
+              color={color}
+            />
           ),
         }}
       />
+      <Tabs.Screen
+        name="blog"
+        options={{
+          title: "blog",
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon
+              name={focused ? "sharealt" : "sharealt"}
+              color={color}
+            />
+          ),
+        }}
+      />            
     </Tabs>
+    
   );
 }
