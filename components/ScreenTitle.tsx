@@ -7,7 +7,7 @@ export default function ScreenTitle() {
   const screenName = route.name;
   return (
     <View>
-          <Text className="text-4xl font-bold p-3">{screenName === "index" ? "Home" : screenName}</Text>
+        <Text className="text-4xl font-bold p-3">{screenName === "index" ? "Home" : screenName}</Text>
     </View>
   );
 }
